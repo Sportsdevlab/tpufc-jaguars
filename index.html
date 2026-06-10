@@ -447,6 +447,33 @@
     .gm-value p{font-size:.74rem;color:var(--grey);line-height:1.6}
     @media(max-width:900px){.gm-phases-grid{grid-template-columns:1fr}.gm-press-row{grid-template-columns:1fr 1fr}.gm-identity{flex-wrap:wrap}.gm-word{flex:0 0 50%;border-bottom:1px solid var(--border)}.gm-values-row{grid-template-columns:1fr 1fr}.gm-week-row{flex-wrap:wrap}.gm-day{flex:0 0 calc(33.33% - 2px)}}
     @media(max-width:640px){.gm-press-row{grid-template-columns:1fr}.gm-values-row{grid-template-columns:1fr}.gm-word{flex:0 0 100%}}
+    .gm-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0}
+    .gm-principle{background:#111;border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:36px 28px;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.3,1),box-shadow .3s}
+    .gm-principle:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .gm-principle::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .35s cubic-bezier(.2,.8,.3,1);transform-origin:left}
+    .gm-principle:hover::before{transform:scaleX(1)}
+    .gm-principle-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:4rem;color:rgba(255,255,255,.03);position:absolute;top:16px;right:20px;line-height:1}
+    .gm-principle-icon{font-size:1.8rem;margin-bottom:16px}
+    .gm-principle h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.9rem;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .gm-principle p{font-size:.8rem;color:var(--grey);line-height:1.7}
+    @media(max-width:900px){.gm-principles{grid-template-columns:1fr}}
+
+    /* ── YOUTH ───────────────────────────────────────── */
+    .youth-sec{background:#070707;position:relative;overflow:hidden}
+    .youth-sec::after{content:'ACADEMY';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(5rem,14vw,16rem);color:rgba(255,255,255,.015);text-transform:uppercase;white-space:nowrap;pointer-events:none;z-index:0}
+    .youth-tabs{display:flex;gap:6px;margin-bottom:32px;flex-wrap:wrap;position:relative;z-index:1}
+    .yt{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 28px;border-radius:4px;cursor:pointer;transition:all .25s}
+    .yt:hover{border-color:rgba(196,0,22,.4);color:rgba(255,255,255,.7)}
+    .yt.active{background:var(--red);border-color:var(--red);color:#fff}
+    .youth-panel{position:relative;z-index:1}
+    .youth-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .youth-player{background:#111;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:border-color .25s,transform .25s}
+    .youth-player:hover{border-color:rgba(196,0,22,.3);transform:translateY(-2px)}
+    .yp-avatar{width:34px;height:34px;border-radius:50%;background:rgba(196,0,22,.1);border:1px solid rgba(196,0,22,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.7rem;color:var(--red)}
+    .yp-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;color:rgba(255,255,255,.85);line-height:1.4}
+    .youth-count{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:20px;position:relative;z-index:1}
+    @media(max-width:1000px){.youth-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:640px){.youth-grid{grid-template-columns:repeat(2,1fr)}.yt{padding:8px 18px;font-size:.65rem}}
 
     /* ── SCROLL ANIMATIONS ───────────────────────────── */
     .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.2,.8,.3,1),transform .7s cubic-bezier(.2,.8,.3,1)}
@@ -663,6 +690,7 @@
       <li><a href="#news">News</a></li>
       <li><a href="#club">The Club</a></li>
       <li><a href="#squad">Squad</a></li>
+          <li><a href="#youth">Academy</a></li>
       <li><a href="#fixtures">Fixtures</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#signings" style="color:var(--gold)">Signings 🔴</a></li>
@@ -685,6 +713,7 @@
   <a href="#news" onclick="closeMob()">News</a>
   <a href="#club" onclick="closeMob()">The Club</a>
   <a href="#squad" onclick="closeMob()">Squad</a>
+  <a href="#youth" onclick="closeMob()">Academy</a>
   <a href="#fixtures" onclick="closeMob()">Fixtures</a>
   <a href="#signings" onclick="closeMob()" style="color:var(--gold)">New Signings 🔴</a>
   <a href="#community" onclick="closeMob()">Community</a>
@@ -1307,163 +1336,30 @@
       </div>
     </div>
 
-    <!-- ── FOUR GAME PHASES ── -->
+    <!-- ── HOW WE PLAY ── -->
     <div class="reveal" style="margin-bottom:24px">
-      <div class="tag" style="margin-bottom:16px">Tactical Structure</div>
-      <h3 class="heading white" style="font-size:clamp(1.4rem,3vw,2rem)">The <span>Four Phases</span> of Jaguar Football</h3>
+      <div class="tag" style="margin-bottom:16px">How We Play</div>
+      <h3 class="heading white" style="font-size:clamp(1.4rem,3vw,2rem)">Three Principles. <span>One Identity.</span></h3>
+      <p class="subhead" style="max-width:600px">Under Miki Lladó, the Jaguars play an attacking, high-energy brand of football rooted in Spanish positional principles and shaped for Singapore's elite level.</p>
     </div>
-    <div class="gm-phases-grid reveal">
-      <!-- Organised Attack -->
-      <div class="gm-phase attack">
-        <div class="gm-phase-num">01</div>
-        <div class="gm-phase-icon">⚔️</div>
-        <h3>Organised Attack</h3>
-        <p>Positional play with purpose. The Jaguars build patiently from the goalkeeper, occupying width and depth, seeking to disorganise the opposition before striking. Three attacking principles drive every move forward.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
-          <div style="background:rgba(196,0,22,.12);border:1px solid rgba(196,0,22,.25);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.65rem;color:var(--red);text-transform:uppercase;letter-spacing:.1em">Initiate</div>
-            <div style="font-size:.68rem;color:rgba(255,255,255,.4);margin-top:3px">Build from GK · Short or long</div>
-          </div>
-          <div style="background:rgba(196,0,22,.12);border:1px solid rgba(196,0,22,.25);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.65rem;color:var(--red);text-transform:uppercase;letter-spacing:.1em">Create</div>
-            <div style="font-size:.68rem;color:rgba(255,255,255,.4);margin-top:3px">Space · Overloads · Free men</div>
-          </div>
-          <div style="background:rgba(196,0,22,.12);border:1px solid rgba(196,0,22,.25);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.65rem;color:var(--red);text-transform:uppercase;letter-spacing:.1em">Finish</div>
-            <div style="font-size:.68rem;color:rgba(255,255,255,.4);margin-top:3px">Area attacks · Crosses · Runs</div>
-          </div>
-        </div>
-        <div class="gm-pills">
-          <span class="gm-pill">Positional Play</span>
-          <span class="gm-pill">Vertical Play</span>
-          <span class="gm-pill">Direct Play</span>
-          <span class="gm-pill">Width &amp; Depth</span>
-          <span class="gm-pill">GK as extra man</span>
-        </div>
+    <div class="gm-principles reveal">
+      <div class="gm-principle">
+        <div class="gm-principle-num">01</div>
+        <div class="gm-principle-icon">⚽</div>
+        <h3>Dominate with the Ball</h3>
+        <p>We build from the back, connect through the lines and occupy the pitch intelligently. Patience with purpose — we create chances through structure, not luck.</p>
       </div>
-      <!-- Offensive Transition -->
-      <div class="gm-phase trans-off">
-        <div class="gm-phase-num">02</div>
-        <div class="gm-phase-icon">⚡</div>
-        <h3>Offensive Transition</h3>
-        <p>The moment the ball is won is the most dangerous in football. The Jaguars are trained to exploit disorganisation immediately — attacking the spaces behind the opposition press before they can recover.</p>
-        <div class="gm-pills">
-          <span class="gm-pill">Win → Attack Instantly</span>
-          <span class="gm-pill">Find Free Man</span>
-          <span class="gm-pill">Advance Same / Different Channel</span>
-          <span class="gm-pill">Be Vertical</span>
-          <span class="gm-pill">Attack Depth</span>
-        </div>
-        <p style="margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.4);font-style:italic">"Steal — Depth. Win the ball and immediately go forward. No hesitation."</p>
+      <div class="gm-principle">
+        <div class="gm-principle-num">02</div>
+        <div class="gm-principle-icon">⚡</div>
+        <h3>Win it Back Fast</h3>
+        <p>Every ball lost is a signal to press. The Jaguars hunt in packs — recovering possession high, early, and aggressively. We turn defence into attack in seconds.</p>
       </div>
-      <!-- Organised Defense -->
-      <div class="gm-phase defense">
-        <div class="gm-phase-num">03</div>
-        <div class="gm-phase-icon">🛡️</div>
-        <h3>Organised Defense</h3>
-        <p>Compact, aggressive, coordinated. Three defensive blocks — high, mid, low — each with specific roles, mechanisms and activation triggers. The entire team defends as a unit, with every player knowing exactly where to be.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
-          <div style="background:rgba(100,150,255,.08);border:1px solid rgba(100,150,255,.2);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.62rem;color:#6496ff;text-transform:uppercase">High Press</div>
-            <div style="font-size:.66rem;color:rgba(255,255,255,.35);margin-top:3px">Win high up pitch</div>
-          </div>
-          <div style="background:rgba(100,150,255,.08);border:1px solid rgba(100,150,255,.2);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.62rem;color:#6496ff;text-transform:uppercase">Mid Block</div>
-            <div style="font-size:.66rem;color:rgba(255,255,255,.35);margin-top:3px">Maintain shape</div>
-          </div>
-          <div style="background:rgba(100,150,255,.08);border:1px solid rgba(100,150,255,.2);border-radius:6px;padding:10px 8px;text-align:center">
-            <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:.62rem;color:#6496ff;text-transform:uppercase">Low Block</div>
-            <div style="font-size:.66rem;color:rgba(255,255,255,.35);margin-top:3px">Compact, resist</div>
-          </div>
-        </div>
-        <div class="gm-pills">
-          <span class="gm-pill">Zonal Defense</span>
-          <span class="gm-pill">Aggressive Forward</span>
-          <span class="gm-pill">Cover Shadows</span>
-          <span class="gm-pill">Line Coordination</span>
-          <span class="gm-pill">No space in box</span>
-        </div>
-      </div>
-      <!-- Defensive Transition -->
-      <div class="gm-phase trans-def">
-        <div class="gm-phase-num">04</div>
-        <div class="gm-phase-icon">🔄</div>
-        <h3>Defensive Transition</h3>
-        <p>The instant the ball is lost, every Jaguar reacts. The player who loses it is first to press. Others sprint back, close passing lanes and reform the defensive structure — zero time for the opponent to exploit the moment of loss.</p>
-        <div class="gm-pills">
-          <span class="gm-pill">Loser Presses First</span>
-          <span class="gm-pill">Counter-Press</span>
-          <span class="gm-pill">Sprint Recovery Runs</span>
-          <span class="gm-pill">Defensive Funnel</span>
-          <span class="gm-pill">Role Switch Immediately</span>
-        </div>
-        <p style="margin-top:14px;font-size:.8rem;color:rgba(255,255,255,.4);font-style:italic">"Lose the ball — protect yourself. 5 seconds to win it back or recover shape."</p>
-      </div>
-    </div>
-
-    <!-- ── PRESSING PHILOSOPHY ── -->
-    <div class="reveal" style="margin-bottom:24px">
-      <div class="tag" style="margin-bottom:16px">Pressing System</div>
-      <h3 class="heading white" style="font-size:clamp(1.4rem,3vw,2rem)">Three Pressing <span>Blocks</span></h3>
-    </div>
-    <div class="gm-press-row reveal">
-      <div class="gm-press-block high">
-        <div class="press-icon">🔴</div>
-        <h4>High Press</h4>
-        <p>Applied from the opposition's defensive third. The Jaguars press in numbers immediately after the opponent has the ball. Activation triggers are pre-set — every player knows when to go. The goal: win the ball in dangerous positions.</p>
-      </div>
-      <div class="gm-press-block mid">
-        <div class="press-icon">🟡</div>
-        <h4>Mid Block</h4>
-        <p>The default defensive shape. Compact between the lines, wide enough to defend channels. Constant block height, reactive pressure when the trigger appears. Forces the opponent wide and into low-percentage positions.</p>
-      </div>
-      <div class="gm-press-block low">
-        <div class="press-icon">🔵</div>
-        <h4>Low Block</h4>
-        <p>When protecting a lead or facing elite opposition, the Jaguars drop into a tight defensive unit. Lines fuse, central lanes are locked, and every player is a defender. Controlled resistance — not passive defence.</p>
-      </div>
-    </div>
-
-    <!-- ── TRAINING WEEK ── -->
-    <div class="reveal" style="margin-bottom:24px">
-      <div class="tag" style="margin-bottom:16px">Training Methodology</div>
-      <h3 class="heading white" style="font-size:clamp(1.4rem,3vw,2rem)">The Jaguar <span>Microcycle</span></h3>
-      <p class="subhead" style="margin-bottom:28px">Every training week is structured to peak on matchday. Each session has a specific physical and tactical load — nothing is left to chance.</p>
-    </div>
-    <div class="gm-week reveal">
-      <div class="gm-week-row">
-        <div class="gm-day">
-          <div class="gd-code">MD+1</div>
-          <div class="gd-label">Individual Recovery</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD+2</div>
-          <div class="gd-label">Group Recovery</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD−5</div>
-          <div class="gd-label">Mixed Dynamics</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD−4</div>
-          <div class="gd-label">Strength / Neuro</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD−3</div>
-          <div class="gd-label">Resistance / Metabolic</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD−2</div>
-          <div class="gd-label">Speed / Optimisation</div>
-        </div>
-        <div class="gm-day">
-          <div class="gd-code">MD−1</div>
-          <div class="gd-label">Activation / Focus</div>
-        </div>
-        <div class="gm-day matchday">
-          <div class="gd-code">MD</div>
-          <div class="gd-label">Match Day ⚽</div>
-        </div>
+      <div class="gm-principle">
+        <div class="gm-principle-num">03</div>
+        <div class="gm-principle-icon">🔥</div>
+        <h3>Compete Every Second</h3>
+        <p>No passenger. No switch off. Eleven players who fight for each other — in possession, out of possession, and in every transition. That is the Jaguar standard.</p>
       </div>
     </div>
 
@@ -1717,6 +1613,135 @@
     </div>
     <div style="text-align:center;margin-top:40px" class="reveal">
       <a href="https://spl.sg/teams/tanjong-pagar-united-fc/" target="_blank" rel="noopener" class="btn btn-dark">View Full Squad</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── YOUTH ACADEMY ──────────────────────────────── -->
+<section class="youth-sec sec" id="youth">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div>
+        <div class="tag">Jaguars Academy · 2026</div>
+        <h2 class="heading white" style="margin-top:10px">The <span>Next Generation</span></h2>
+        <p class="subhead">The future of Tanjong Pagar United — developed through the Jaguar Way from youth to professional.</p>
+      </div>
+      <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;color:rgba(255,255,255,.06);line-height:1">79</div>
+        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2)">Academy Players</div>
+      </div>
+    </div>
+    <div class="youth-tabs reveal">
+      <button class="yt active" onclick="switchAge(this,'u14')">U14 <span style="opacity:.5;margin-left:4px">17</span></button>
+      <button class="yt" onclick="switchAge(this,'u15')">U15 <span style="opacity:.5;margin-left:4px">18</span></button>
+      <button class="yt" onclick="switchAge(this,'u17')">U17 <span style="opacity:.5;margin-left:4px">22</span></button>
+      <button class="yt" onclick="switchAge(this,'u19')">U19 <span style="opacity:.5;margin-left:4px">21</span></button>
+    </div>
+
+    <!-- U14 -->
+    <div class="youth-panel" id="yp-u14">
+      <div class="youth-count">17 players</div>
+      <div class="youth-grid">
+        <div class="youth-player"><div class="yp-avatar">ST</div><div class="yp-name">Sky Tan Ei Long</div></div>
+        <div class="youth-player"><div class="yp-avatar">EL</div><div class="yp-name">Eugene Lim Yu Jun</div></div>
+        <div class="youth-player"><div class="yp-avatar">EM</div><div class="yp-name">Ennio Mok Jun Han</div></div>
+        <div class="youth-player"><div class="yp-avatar">RM</div><div class="yp-name">Rito Morita</div></div>
+        <div class="youth-player"><div class="yp-avatar">MS</div><div class="yp-name">Muhammad Sulaiman bin Muhamad Najib</div></div>
+        <div class="youth-player"><div class="yp-avatar">TJ</div><div class="yp-name">Tan Yu Xi Jervis</div></div>
+        <div class="youth-player"><div class="yp-avatar">RS</div><div class="yp-name">Ranit Singh</div></div>
+        <div class="youth-player"><div class="yp-avatar">MA</div><div class="yp-name">Muhammad Aneeq Adel bin Abdull Sanni</div></div>
+        <div class="youth-player"><div class="yp-avatar">RR</div><div class="yp-name">Ryan Rajinikanth</div></div>
+        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Max Ng Zhi Ler</div></div>
+        <div class="youth-player"><div class="yp-avatar">NS</div><div class="yp-name">Nehal s/o Sanjeve</div></div>
+        <div class="youth-player"><div class="yp-avatar">AD</div><div class="yp-name">Adil Dzulqarnain bin Razaliwandy</div></div>
+        <div class="youth-player"><div class="yp-avatar">NM</div><div class="yp-name">Norman Marteen Hamzaini bin Abdullah</div></div>
+        <div class="youth-player"><div class="yp-avatar">AA</div><div class="yp-name">Aqil Aaryan Naqi</div></div>
+        <div class="youth-player"><div class="yp-avatar">AS</div><div class="yp-name">Adnan Shavaz bin Jumat</div></div>
+        <div class="youth-player"><div class="yp-avatar">AN</div><div class="yp-name">Muhd Aydel Nawfal bin Norisham</div></div>
+        <div class="youth-player"><div class="yp-avatar">AB</div><div class="yp-name">Abdullah bin Al Juffri</div></div>
+      </div>
+    </div>
+
+    <!-- U15 -->
+    <div class="youth-panel" id="yp-u15" style="display:none">
+      <div class="youth-count">18 players</div>
+      <div class="youth-grid">
+        <div class="youth-player"><div class="yp-avatar">CW</div><div class="yp-name">Cletus Wong Yuen Khai</div></div>
+        <div class="youth-player"><div class="yp-avatar">DY</div><div class="yp-name">Darell Yang Sheng Yong</div></div>
+        <div class="youth-player"><div class="yp-avatar">JT</div><div class="yp-name">Jayden Tan Hong Xu</div></div>
+        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Muhammad Danial Bazil bin Hazrin</div></div>
+        <div class="youth-player"><div class="yp-avatar">RW</div><div class="yp-name">Rafi Wilding</div></div>
+        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Muhammad Nazril bin Madyusak</div></div>
+        <div class="youth-player"><div class="yp-avatar">CK</div><div class="yp-name">Cian Kang Harding</div></div>
+        <div class="youth-player"><div class="yp-avatar">NR</div><div class="yp-name">Nathan Raj Ryan Raj</div></div>
+        <div class="youth-player"><div class="yp-avatar">AK</div><div class="yp-name">Aldrick Kaelasa Sulistio</div></div>
+        <div class="youth-player"><div class="yp-avatar">PW</div><div class="yp-name">Puah Wei Xiang</div></div>
+        <div class="youth-player"><div class="yp-avatar">LR</div><div class="yp-name">Leo Ritchie</div></div>
+        <div class="youth-player"><div class="yp-avatar">MI</div><div class="yp-name">Muhammad Irfandy Zikry bin Mohamad Fadly</div></div>
+        <div class="youth-player"><div class="yp-avatar">AR</div><div class="yp-name">Arish Rehan</div></div>
+        <div class="youth-player"><div class="yp-avatar">TB</div><div class="yp-name">Tan Xin Ye Brian</div></div>
+        <div class="youth-player"><div class="yp-avatar">LY</div><div class="yp-name">Loh Yi Heng</div></div>
+        <div class="youth-player"><div class="yp-avatar">DC</div><div class="yp-name">Dexter Chua Zhi Yu</div></div>
+        <div class="youth-player"><div class="yp-avatar">AA</div><div class="yp-name">Aaryan Rifa'i bin Azammuddin</div></div>
+        <div class="youth-player"><div class="yp-avatar">GL</div><div class="yp-name">Gulam</div></div>
+      </div>
+    </div>
+
+    <!-- U17 -->
+    <div class="youth-panel" id="yp-u17" style="display:none">
+      <div class="youth-count">22 players</div>
+      <div class="youth-grid">
+        <div class="youth-player"><div class="yp-avatar">HM</div><div class="yp-name">Hykel Morris</div></div>
+        <div class="youth-player"><div class="yp-avatar">MQ</div><div class="yp-name">Mohamad Shareez Qusyairi</div></div>
+        <div class="youth-player"><div class="yp-avatar">DN</div><div class="yp-name">Danish Nastaa'in</div></div>
+        <div class="youth-player"><div class="yp-avatar">LN</div><div class="yp-name">Luth Naqi bin Sufandi</div></div>
+        <div class="youth-player"><div class="yp-avatar">MA</div><div class="yp-name">Mohamed Ashraf bin Hizahar</div></div>
+        <div class="youth-player"><div class="yp-avatar">AL</div><div class="yp-name">Anders Lum</div></div>
+        <div class="youth-player"><div class="yp-avatar">AJ</div><div class="yp-name">Alfian bin Jamaludin</div></div>
+        <div class="youth-player"><div class="yp-avatar">LX</div><div class="yp-name">Lim Xuan Hui</div></div>
+        <div class="youth-player"><div class="yp-avatar">MV</div><div class="yp-name">Miro Valio</div></div>
+        <div class="youth-player"><div class="yp-avatar">SZ</div><div class="yp-name">Shaikh Ziqry bin Shaikh Zaid Fraij</div></div>
+        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Mohammed Dafiq bin Mohammed Ali</div></div>
+        <div class="youth-player"><div class="yp-avatar">SE</div><div class="yp-name">Soo Yin Rui Estroy</div></div>
+        <div class="youth-player"><div class="yp-avatar">LA</div><div class="yp-name">Lutfan Amsyar bin Saiful Bahri</div></div>
+        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhammad Fairul Syaqil bin Faizal</div></div>
+        <div class="youth-player"><div class="yp-avatar">JN</div><div class="yp-name">Jared Ng</div></div>
+        <div class="youth-player"><div class="yp-avatar">MC</div><div class="yp-name">Mattia Castro</div></div>
+        <div class="youth-player"><div class="yp-avatar">JT</div><div class="yp-name">Jayden Taylor</div></div>
+        <div class="youth-player"><div class="yp-avatar">DR</div><div class="yp-name">Derek Ruiqi Man</div></div>
+        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhamad Faruq bin Mohamad Faizal</div></div>
+        <div class="youth-player"><div class="yp-avatar">MM</div><div class="yp-name">Matthew John McKenzie</div></div>
+        <div class="youth-player"><div class="yp-avatar">IR</div><div class="yp-name">Ilhan Rafael bin Alfian</div></div>
+        <div class="youth-player"><div class="yp-avatar">LC</div><div class="yp-name">Leone Ciuti</div></div>
+      </div>
+    </div>
+
+    <!-- U19 -->
+    <div class="youth-panel" id="yp-u19" style="display:none">
+      <div class="youth-count">21 players</div>
+      <div class="youth-grid">
+        <div class="youth-player"><div class="yp-avatar">MI</div><div class="yp-name">Mohammad Irhan Hussaini</div></div>
+        <div class="youth-player"><div class="yp-avatar">FT</div><div class="yp-name">Francesco Emilio Toso Villanueva</div></div>
+        <div class="youth-player"><div class="yp-avatar">MM</div><div class="yp-name">Matin Mirza</div></div>
+        <div class="youth-player"><div class="yp-avatar">MK</div><div class="yp-name">Muhammad Khasmir bin Effendi</div></div>
+        <div class="youth-player"><div class="yp-avatar">PG</div><div class="yp-name">Peter Erik van Groenestijn</div></div>
+        <div class="youth-player"><div class="yp-avatar">KE</div><div class="yp-name">Keoni</div></div>
+        <div class="youth-player"><div class="yp-avatar">AB</div><div class="yp-name">Muhd Ashraf Batista</div></div>
+        <div class="youth-player"><div class="yp-avatar">PE</div><div class="yp-name">Pradeep s/o Eraaman</div></div>
+        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhammad Firman bin Abdullah</div></div>
+        <div class="youth-player"><div class="yp-avatar">RS</div><div class="yp-name">Raoul Shah bin Fathir Ahmad</div></div>
+        <div class="youth-player"><div class="yp-avatar">PM</div><div class="yp-name">Poa Min Jun</div></div>
+        <div class="youth-player"><div class="yp-avatar">MR</div><div class="yp-name">Muhammad Rayyan bin Muhamad Roslan</div></div>
+        <div class="youth-player"><div class="yp-avatar">HA</div><div class="yp-name">Hazwan Afiq bin Haszalan</div></div>
+        <div class="youth-player"><div class="yp-avatar">IL</div><div class="yp-name">Isak Arthur Linden</div></div>
+        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Mohammed Danny bin Mohammed Ali</div></div>
+        <div class="youth-player"><div class="yp-avatar">LT</div><div class="yp-name">Luke Titterington</div></div>
+        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Muhmmad Nor Irfan bin Muhammad</div></div>
+        <div class="youth-player"><div class="yp-avatar">KA</div><div class="yp-name">Kavin Arvinth</div></div>
+        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Muhamad Dhafyr Iman bin Muhamad Sahfinye</div></div>
+        <div class="youth-player"><div class="yp-avatar">LY</div><div class="yp-name">Lucas Alessandro Yeo</div></div>
+        <div class="youth-player"><div class="yp-avatar">DC</div><div class="yp-name">Darren Choong Cheng Jun</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2172,6 +2197,22 @@
   mobClose.addEventListener('click', () => mobNav.classList.remove('open'));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') mobNav.classList.remove('open'); });
   function closeMob() { mobNav.classList.remove('open'); }
+
+  // ── Youth age group tabs
+  function switchAge(btn, id) {
+    document.querySelectorAll('.yt').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.youth-panel').forEach(p => p.style.display = 'none');
+    btn.classList.add('active');
+    const panel = document.getElementById('yp-' + id);
+    panel.style.display = 'block';
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateY(16px)';
+    requestAnimationFrame(() => {
+      panel.style.transition = 'opacity .4s ease, transform .4s ease';
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0)';
+    });
+  }
 
   // ── Squad position filter
   function filterPos(btn, pos) {
