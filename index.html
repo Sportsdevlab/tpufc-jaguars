@@ -463,21 +463,37 @@
     @media(max-width:900px){.gm-principles{grid-template-columns:1fr}}
 
     /* ── YOUTH ───────────────────────────────────────── */
-    .youth-sec{background:#070707;position:relative;overflow:hidden}
-    .youth-sec::after{content:'ACADEMY';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(5rem,14vw,16rem);color:rgba(255,255,255,.015);text-transform:uppercase;white-space:nowrap;pointer-events:none;z-index:0}
-    .youth-tabs{display:flex;gap:6px;margin-bottom:32px;flex-wrap:wrap;position:relative;z-index:1}
-    .yt{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:10px 28px;border-radius:4px;cursor:pointer;transition:all .25s}
-    .yt:hover{border-color:rgba(196,0,22,.4);color:rgba(255,255,255,.7)}
-    .yt.active{background:var(--red);border-color:var(--red);color:#fff}
-    .youth-panel{position:relative;z-index:1}
-    .youth-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-    .youth-player{background:#111;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:border-color .25s,transform .25s}
-    .youth-player:hover{border-color:rgba(196,0,22,.3);transform:translateY(-2px)}
-    .yp-avatar{width:34px;height:34px;border-radius:50%;background:rgba(196,0,22,.1);border:1px solid rgba(196,0,22,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.7rem;color:var(--red)}
-    .yp-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.7rem;color:rgba(255,255,255,.85);line-height:1.4}
-    .youth-count{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:20px;position:relative;z-index:1}
-    @media(max-width:1000px){.youth-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:640px){.youth-grid{grid-template-columns:repeat(2,1fr)}.yt{padding:8px 18px;font-size:.65rem}}
+    /* ── COE ACADEMY ─────────────────────────────────── */
+    .coe-sec{background:#050505;position:relative;overflow:hidden}
+    .coe-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--red),transparent)}
+    .coe-sec::after{content:'COE';position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-size:clamp(12rem,26vw,30rem);color:rgba(255,255,255,.012);pointer-events:none;z-index:0;line-height:1;white-space:nowrap}
+    .coe-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:44px 0 52px;position:relative;z-index:1}
+    .coe-stat{padding:22px 16px;text-align:center;border-right:1px solid var(--border)}
+    .coe-stat:last-child{border-right:none}
+    .cs-n{font-family:var(--font-display);font-size:2.4rem;color:var(--gold);line-height:1}
+    .cs-l{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-top:6px}
+    .age-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:36px;position:relative;z-index:1}
+    .age-tab{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px 20px;cursor:pointer;transition:all .28s cubic-bezier(.2,.8,.3,1);text-align:left;display:flex;flex-direction:column;gap:2px}
+    .age-tab:hover{border-color:rgba(196,0,22,.4);background:rgba(196,0,22,.05)}
+    .age-tab.active{background:rgba(196,0,22,.1);border-color:rgba(196,0,22,.5);box-shadow:0 0 32px rgba(196,0,22,.08)}
+    .at-g{font-family:var(--font-display);font-size:2.1rem;line-height:1;color:rgba(255,255,255,.45);transition:color .25s}
+    .age-tab.active .at-g{color:var(--red)}
+    .at-lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-top:2px}
+    .at-n{font-family:'Montserrat',sans-serif;font-weight:900;font-size:.7rem;color:rgba(255,255,255,.15);margin-top:10px}
+    .age-tab.active .at-n{color:rgba(196,0,22,.6)}
+    .coe-panel{position:relative;z-index:1}
+    .coe-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .cp{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 12px 16px;display:flex;flex-direction:column;align-items:center;gap:11px;position:relative;overflow:hidden;transition:border-color .25s,transform .28s,box-shadow .28s;cursor:default}
+    .cp:hover{border-color:rgba(196,0,22,.4);transform:translateY(-3px);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 30px rgba(196,0,22,.04)}
+    .cp-n{position:absolute;top:-4px;right:4px;font-family:var(--font-display);font-size:4.2rem;color:rgba(255,255,255,.035);line-height:1;pointer-events:none;transition:color .25s}
+    .cp:hover .cp-n{color:rgba(196,0,22,.08)}
+    .cp-av{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,rgba(196,0,22,.2),rgba(196,0,22,.06));border:1.5px solid rgba(196,0,22,.25);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;color:rgba(196,0,22,.9);flex-shrink:0;transition:all .25s}
+    .cp:hover .cp-av{background:linear-gradient(135deg,rgba(196,0,22,.32),rgba(196,0,22,.12));border-color:rgba(196,0,22,.55);box-shadow:0 0 20px rgba(196,0,22,.12)}
+    .cp-nm{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.67rem;color:rgba(255,255,255,.65);text-align:center;line-height:1.5}
+    .cp-nm strong{display:block;color:rgba(255,255,255,.9);font-weight:800;font-size:.73rem}
+    @media(max-width:1100px){.coe-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:800px){.coe-grid{grid-template-columns:repeat(3,1fr)}.age-nav,.coe-stats{grid-template-columns:repeat(2,1fr)}.coe-stat:nth-child(2){border-right:none}.coe-stat:nth-child(n+3){border-top:1px solid var(--border)}.coe-stat:nth-child(3){border-right:1px solid var(--border)}}
+    @media(max-width:480px){.coe-grid{grid-template-columns:repeat(2,1fr)}}
 
     /* ── SCROLL ANIMATIONS ───────────────────────────── */
     .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
@@ -1618,130 +1634,144 @@
   </div>
 </section>
 
-<!-- ── YOUTH ACADEMY ──────────────────────────────── -->
-<section class="youth-sec sec" id="youth">
+<!-- ── COE ACADEMY ────────────────────────────────── -->
+<section class="coe-sec sec" id="youth">
   <div class="wrap">
-    <div class="sec-header reveal">
+    <div class="sec-header reveal" style="position:relative;z-index:1">
       <div>
-        <div class="tag">Jaguars Academy · 2026</div>
-        <h2 class="heading white" style="margin-top:10px">The <span>Next Generation</span></h2>
-        <p class="subhead">The future of Tanjong Pagar United — developed through the Jaguar Way from youth to professional.</p>
-      </div>
-      <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
-        <div style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.5rem;color:rgba(255,255,255,.06);line-height:1">79</div>
-        <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2)">Academy Players</div>
+        <div class="tag" style="background:rgba(196,0,22,.1);color:var(--red);border-color:rgba(196,0,22,.25)">Centre of Excellence · 2026</div>
+        <h2 class="heading white" style="margin-top:10px">Academy <span>COE</span></h2>
+        <p class="subhead">78 players. 4 age groups. One philosophy — the Jaguar Way. Developing Singapore's next generation of professional footballers from the ground up.</p>
       </div>
     </div>
-    <div class="youth-tabs reveal">
-      <button class="yt active" onclick="switchAge(this,'u14')">U14 <span style="opacity:.5;margin-left:4px">17</span></button>
-      <button class="yt" onclick="switchAge(this,'u15')">U15 <span style="opacity:.5;margin-left:4px">18</span></button>
-      <button class="yt" onclick="switchAge(this,'u17')">U17 <span style="opacity:.5;margin-left:4px">22</span></button>
-      <button class="yt" onclick="switchAge(this,'u19')">U19 <span style="opacity:.5;margin-left:4px">21</span></button>
+    <div class="coe-stats reveal">
+      <div class="coe-stat"><div class="cs-n">4</div><div class="cs-l">Age Groups</div></div>
+      <div class="coe-stat"><div class="cs-n">78</div><div class="cs-l">Players</div></div>
+      <div class="coe-stat"><div class="cs-n">2026</div><div class="cs-l">Season</div></div>
+      <div class="coe-stat"><div class="cs-n">1</div><div class="cs-l">Philosophy</div></div>
+    </div>
+    <div class="age-nav reveal">
+      <button class="age-tab active" onclick="switchCoe(this,'u14')">
+        <div class="at-g">U14</div>
+        <div class="at-lbl">Under 14</div>
+        <div class="at-n">17 Players</div>
+      </button>
+      <button class="age-tab" onclick="switchCoe(this,'u15')">
+        <div class="at-g">U15</div>
+        <div class="at-lbl">Under 15</div>
+        <div class="at-n">18 Players</div>
+      </button>
+      <button class="age-tab" onclick="switchCoe(this,'u17')">
+        <div class="at-g">U17</div>
+        <div class="at-lbl">Under 17</div>
+        <div class="at-n">22 Players</div>
+      </button>
+      <button class="age-tab" onclick="switchCoe(this,'u19')">
+        <div class="at-g">U19</div>
+        <div class="at-lbl">Under 19</div>
+        <div class="at-n">21 Players</div>
+      </button>
     </div>
 
     <!-- U14 -->
-    <div class="youth-panel" id="yp-u14">
-      <div class="youth-count">17 players</div>
-      <div class="youth-grid">
-        <div class="youth-player"><div class="yp-avatar">ST</div><div class="yp-name">Sky Tan Ei Long</div></div>
-        <div class="youth-player"><div class="yp-avatar">EL</div><div class="yp-name">Eugene Lim Yu Jun</div></div>
-        <div class="youth-player"><div class="yp-avatar">EM</div><div class="yp-name">Ennio Mok Jun Han</div></div>
-        <div class="youth-player"><div class="yp-avatar">RM</div><div class="yp-name">Rito Morita</div></div>
-        <div class="youth-player"><div class="yp-avatar">MS</div><div class="yp-name">Muhammad Sulaiman bin Muhamad Najib</div></div>
-        <div class="youth-player"><div class="yp-avatar">TJ</div><div class="yp-name">Tan Yu Xi Jervis</div></div>
-        <div class="youth-player"><div class="yp-avatar">RS</div><div class="yp-name">Ranit Singh</div></div>
-        <div class="youth-player"><div class="yp-avatar">MA</div><div class="yp-name">Muhammad Aneeq Adel bin Abdull Sanni</div></div>
-        <div class="youth-player"><div class="yp-avatar">RR</div><div class="yp-name">Ryan Rajinikanth</div></div>
-        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Max Ng Zhi Ler</div></div>
-        <div class="youth-player"><div class="yp-avatar">NS</div><div class="yp-name">Nehal s/o Sanjeve</div></div>
-        <div class="youth-player"><div class="yp-avatar">AD</div><div class="yp-name">Adil Dzulqarnain bin Razaliwandy</div></div>
-        <div class="youth-player"><div class="yp-avatar">NM</div><div class="yp-name">Norman Marteen Hamzaini bin Abdullah</div></div>
-        <div class="youth-player"><div class="yp-avatar">AA</div><div class="yp-name">Aqil Aaryan Naqi</div></div>
-        <div class="youth-player"><div class="yp-avatar">AS</div><div class="yp-name">Adnan Shavaz bin Jumat</div></div>
-        <div class="youth-player"><div class="yp-avatar">AN</div><div class="yp-name">Muhd Aydel Nawfal bin Norisham</div></div>
-        <div class="youth-player"><div class="yp-avatar">AB</div><div class="yp-name">Abdullah bin Al Juffri</div></div>
+    <div class="coe-panel" id="cp-u14">
+      <div class="coe-grid">
+        <div class="cp"><div class="cp-n">01</div><div class="cp-av">ST</div><div class="cp-nm"><strong>Sky</strong><br>Tan Ei Long</div></div>
+        <div class="cp"><div class="cp-n">02</div><div class="cp-av">EL</div><div class="cp-nm"><strong>Eugene</strong><br>Lim Yu Jun</div></div>
+        <div class="cp"><div class="cp-n">03</div><div class="cp-av">EM</div><div class="cp-nm"><strong>Ennio</strong><br>Mok Jun Han</div></div>
+        <div class="cp"><div class="cp-n">04</div><div class="cp-av">RM</div><div class="cp-nm"><strong>Rito</strong><br>Morita</div></div>
+        <div class="cp"><div class="cp-n">05</div><div class="cp-av">MS</div><div class="cp-nm"><strong>Muhammad</strong><br>Sulaiman</div></div>
+        <div class="cp"><div class="cp-n">06</div><div class="cp-av">TJ</div><div class="cp-nm"><strong>Tan Yu Xi</strong><br>Jervis</div></div>
+        <div class="cp"><div class="cp-n">07</div><div class="cp-av">RS</div><div class="cp-nm"><strong>Ranit</strong><br>Singh</div></div>
+        <div class="cp"><div class="cp-n">08</div><div class="cp-av">MA</div><div class="cp-nm"><strong>Muhammad</strong><br>Aneeq Adel</div></div>
+        <div class="cp"><div class="cp-n">09</div><div class="cp-av">RR</div><div class="cp-nm"><strong>Ryan</strong><br>Rajinikanth</div></div>
+        <div class="cp"><div class="cp-n">10</div><div class="cp-av">MN</div><div class="cp-nm"><strong>Max</strong><br>Ng Zhi Ler</div></div>
+        <div class="cp"><div class="cp-n">11</div><div class="cp-av">NS</div><div class="cp-nm"><strong>Nehal</strong><br>Sanjeve</div></div>
+        <div class="cp"><div class="cp-n">12</div><div class="cp-av">AD</div><div class="cp-nm"><strong>Adil</strong><br>Dzulqarnain</div></div>
+        <div class="cp"><div class="cp-n">13</div><div class="cp-av">NH</div><div class="cp-nm"><strong>Norman</strong><br>Hamzaini</div></div>
+        <div class="cp"><div class="cp-n">14</div><div class="cp-av">AA</div><div class="cp-nm"><strong>Aqil</strong><br>Aaryan Naqi</div></div>
+        <div class="cp"><div class="cp-n">15</div><div class="cp-av">AS</div><div class="cp-nm"><strong>Adnan</strong><br>Shavaz</div></div>
+        <div class="cp"><div class="cp-n">16</div><div class="cp-av">MN</div><div class="cp-nm"><strong>Muhd</strong><br>Aydel Nawfal</div></div>
+        <div class="cp"><div class="cp-n">17</div><div class="cp-av">AJ</div><div class="cp-nm"><strong>Abdullah</strong><br>Al Juffri</div></div>
       </div>
     </div>
 
     <!-- U15 -->
-    <div class="youth-panel" id="yp-u15" style="display:none">
-      <div class="youth-count">18 players</div>
-      <div class="youth-grid">
-        <div class="youth-player"><div class="yp-avatar">CW</div><div class="yp-name">Cletus Wong Yuen Khai</div></div>
-        <div class="youth-player"><div class="yp-avatar">DY</div><div class="yp-name">Darell Yang Sheng Yong</div></div>
-        <div class="youth-player"><div class="yp-avatar">JT</div><div class="yp-name">Jayden Tan Hong Xu</div></div>
-        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Muhammad Danial Bazil bin Hazrin</div></div>
-        <div class="youth-player"><div class="yp-avatar">RW</div><div class="yp-name">Rafi Wilding</div></div>
-        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Muhammad Nazril bin Madyusak</div></div>
-        <div class="youth-player"><div class="yp-avatar">CK</div><div class="yp-name">Cian Kang Harding</div></div>
-        <div class="youth-player"><div class="yp-avatar">NR</div><div class="yp-name">Nathan Raj Ryan Raj</div></div>
-        <div class="youth-player"><div class="yp-avatar">AK</div><div class="yp-name">Aldrick Kaelasa Sulistio</div></div>
-        <div class="youth-player"><div class="yp-avatar">PW</div><div class="yp-name">Puah Wei Xiang</div></div>
-        <div class="youth-player"><div class="yp-avatar">LR</div><div class="yp-name">Leo Ritchie</div></div>
-        <div class="youth-player"><div class="yp-avatar">MI</div><div class="yp-name">Muhammad Irfandy Zikry bin Mohamad Fadly</div></div>
-        <div class="youth-player"><div class="yp-avatar">AR</div><div class="yp-name">Arish Rehan</div></div>
-        <div class="youth-player"><div class="yp-avatar">TB</div><div class="yp-name">Tan Xin Ye Brian</div></div>
-        <div class="youth-player"><div class="yp-avatar">LY</div><div class="yp-name">Loh Yi Heng</div></div>
-        <div class="youth-player"><div class="yp-avatar">DC</div><div class="yp-name">Dexter Chua Zhi Yu</div></div>
-        <div class="youth-player"><div class="yp-avatar">AA</div><div class="yp-name">Aaryan Rifa'i bin Azammuddin</div></div>
-        <div class="youth-player"><div class="yp-avatar">GL</div><div class="yp-name">Gulam</div></div>
+    <div class="coe-panel" id="cp-u15" style="display:none">
+      <div class="coe-grid">
+        <div class="cp"><div class="cp-n">01</div><div class="cp-av">CW</div><div class="cp-nm"><strong>Cletus</strong><br>Wong Yuen Khai</div></div>
+        <div class="cp"><div class="cp-n">02</div><div class="cp-av">DY</div><div class="cp-nm"><strong>Darell</strong><br>Yang Sheng Yong</div></div>
+        <div class="cp"><div class="cp-n">03</div><div class="cp-av">JT</div><div class="cp-nm"><strong>Jayden</strong><br>Tan Hong Xu</div></div>
+        <div class="cp"><div class="cp-n">04</div><div class="cp-av">MD</div><div class="cp-nm"><strong>Muhammad</strong><br>Danial Bazil</div></div>
+        <div class="cp"><div class="cp-n">05</div><div class="cp-av">RW</div><div class="cp-nm"><strong>Rafi</strong><br>Wilding</div></div>
+        <div class="cp"><div class="cp-n">06</div><div class="cp-av">MN</div><div class="cp-nm"><strong>Muhammad</strong><br>Nazril</div></div>
+        <div class="cp"><div class="cp-n">07</div><div class="cp-av">CK</div><div class="cp-nm"><strong>Cian</strong><br>Kang Harding</div></div>
+        <div class="cp"><div class="cp-n">08</div><div class="cp-av">NR</div><div class="cp-nm"><strong>Nathan Raj</strong><br>Ryan Raj</div></div>
+        <div class="cp"><div class="cp-n">09</div><div class="cp-av">AK</div><div class="cp-nm"><strong>Aldrick</strong><br>Kaelasa Sulistio</div></div>
+        <div class="cp"><div class="cp-n">10</div><div class="cp-av">PW</div><div class="cp-nm"><strong>Puah</strong><br>Wei Xiang</div></div>
+        <div class="cp"><div class="cp-n">11</div><div class="cp-av">LR</div><div class="cp-nm"><strong>Leo</strong><br>Ritchie</div></div>
+        <div class="cp"><div class="cp-n">12</div><div class="cp-av">MI</div><div class="cp-nm"><strong>Muhammad</strong><br>Irfandy Zikry</div></div>
+        <div class="cp"><div class="cp-n">13</div><div class="cp-av">AR</div><div class="cp-nm"><strong>Arish</strong><br>Rehan</div></div>
+        <div class="cp"><div class="cp-n">14</div><div class="cp-av">BT</div><div class="cp-nm"><strong>Brian</strong><br>Tan Xin Ye</div></div>
+        <div class="cp"><div class="cp-n">15</div><div class="cp-av">LY</div><div class="cp-nm"><strong>Loh</strong><br>Yi Heng</div></div>
+        <div class="cp"><div class="cp-n">16</div><div class="cp-av">DC</div><div class="cp-nm"><strong>Dexter</strong><br>Chua Zhi Yu</div></div>
+        <div class="cp"><div class="cp-n">17</div><div class="cp-av">AR</div><div class="cp-nm"><strong>Aaryan</strong><br>Rifa'i</div></div>
+        <div class="cp"><div class="cp-n">18</div><div class="cp-av">GU</div><div class="cp-nm"><strong>Gulam</strong></div></div>
       </div>
     </div>
 
     <!-- U17 -->
-    <div class="youth-panel" id="yp-u17" style="display:none">
-      <div class="youth-count">22 players</div>
-      <div class="youth-grid">
-        <div class="youth-player"><div class="yp-avatar">HM</div><div class="yp-name">Hykel Morris</div></div>
-        <div class="youth-player"><div class="yp-avatar">MQ</div><div class="yp-name">Mohamad Shareez Qusyairi</div></div>
-        <div class="youth-player"><div class="yp-avatar">DN</div><div class="yp-name">Danish Nastaa'in</div></div>
-        <div class="youth-player"><div class="yp-avatar">LN</div><div class="yp-name">Luth Naqi bin Sufandi</div></div>
-        <div class="youth-player"><div class="yp-avatar">MA</div><div class="yp-name">Mohamed Ashraf bin Hizahar</div></div>
-        <div class="youth-player"><div class="yp-avatar">AL</div><div class="yp-name">Anders Lum</div></div>
-        <div class="youth-player"><div class="yp-avatar">AJ</div><div class="yp-name">Alfian bin Jamaludin</div></div>
-        <div class="youth-player"><div class="yp-avatar">LX</div><div class="yp-name">Lim Xuan Hui</div></div>
-        <div class="youth-player"><div class="yp-avatar">MV</div><div class="yp-name">Miro Valio</div></div>
-        <div class="youth-player"><div class="yp-avatar">SZ</div><div class="yp-name">Shaikh Ziqry bin Shaikh Zaid Fraij</div></div>
-        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Mohammed Dafiq bin Mohammed Ali</div></div>
-        <div class="youth-player"><div class="yp-avatar">SE</div><div class="yp-name">Soo Yin Rui Estroy</div></div>
-        <div class="youth-player"><div class="yp-avatar">LA</div><div class="yp-name">Lutfan Amsyar bin Saiful Bahri</div></div>
-        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhammad Fairul Syaqil bin Faizal</div></div>
-        <div class="youth-player"><div class="yp-avatar">JN</div><div class="yp-name">Jared Ng</div></div>
-        <div class="youth-player"><div class="yp-avatar">MC</div><div class="yp-name">Mattia Castro</div></div>
-        <div class="youth-player"><div class="yp-avatar">JT</div><div class="yp-name">Jayden Taylor</div></div>
-        <div class="youth-player"><div class="yp-avatar">DR</div><div class="yp-name">Derek Ruiqi Man</div></div>
-        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhamad Faruq bin Mohamad Faizal</div></div>
-        <div class="youth-player"><div class="yp-avatar">MM</div><div class="yp-name">Matthew John McKenzie</div></div>
-        <div class="youth-player"><div class="yp-avatar">IR</div><div class="yp-name">Ilhan Rafael bin Alfian</div></div>
-        <div class="youth-player"><div class="yp-avatar">LC</div><div class="yp-name">Leone Ciuti</div></div>
+    <div class="coe-panel" id="cp-u17" style="display:none">
+      <div class="coe-grid">
+        <div class="cp"><div class="cp-n">01</div><div class="cp-av">HM</div><div class="cp-nm"><strong>Hykel</strong><br>Morris</div></div>
+        <div class="cp"><div class="cp-n">02</div><div class="cp-av">SQ</div><div class="cp-nm"><strong>Shareez</strong><br>Qusyairi</div></div>
+        <div class="cp"><div class="cp-n">03</div><div class="cp-av">DN</div><div class="cp-nm"><strong>Danish</strong><br>Nastaa'in</div></div>
+        <div class="cp"><div class="cp-n">04</div><div class="cp-av">LN</div><div class="cp-nm"><strong>Luth</strong><br>Naqi Sufandi</div></div>
+        <div class="cp"><div class="cp-n">05</div><div class="cp-av">MA</div><div class="cp-nm"><strong>Mohamed</strong><br>Ashraf</div></div>
+        <div class="cp"><div class="cp-n">06</div><div class="cp-av">AL</div><div class="cp-nm"><strong>Anders</strong><br>Lum</div></div>
+        <div class="cp"><div class="cp-n">07</div><div class="cp-av">AJ</div><div class="cp-nm"><strong>Alfian</strong><br>Jamaludin</div></div>
+        <div class="cp"><div class="cp-n">08</div><div class="cp-av">LX</div><div class="cp-nm"><strong>Lim</strong><br>Xuan Hui</div></div>
+        <div class="cp"><div class="cp-n">09</div><div class="cp-av">MV</div><div class="cp-nm"><strong>Miro</strong><br>Valio</div></div>
+        <div class="cp"><div class="cp-n">10</div><div class="cp-av">SZ</div><div class="cp-nm"><strong>Shaikh</strong><br>Ziqry</div></div>
+        <div class="cp"><div class="cp-n">11</div><div class="cp-av">MD</div><div class="cp-nm"><strong>Mohammed</strong><br>Dafiq</div></div>
+        <div class="cp"><div class="cp-n">12</div><div class="cp-av">SE</div><div class="cp-nm"><strong>Soo</strong><br>Yin Rui Estroy</div></div>
+        <div class="cp"><div class="cp-n">13</div><div class="cp-av">LA</div><div class="cp-nm"><strong>Lutfan</strong><br>Amsyar</div></div>
+        <div class="cp"><div class="cp-n">14</div><div class="cp-av">MF</div><div class="cp-nm"><strong>Muhammad</strong><br>Fairul Syaqil</div></div>
+        <div class="cp"><div class="cp-n">15</div><div class="cp-av">JN</div><div class="cp-nm"><strong>Jared</strong><br>Ng</div></div>
+        <div class="cp"><div class="cp-n">16</div><div class="cp-av">MC</div><div class="cp-nm"><strong>Mattia</strong><br>Castro</div></div>
+        <div class="cp"><div class="cp-n">17</div><div class="cp-av">JT</div><div class="cp-nm"><strong>Jayden</strong><br>Taylor</div></div>
+        <div class="cp"><div class="cp-n">18</div><div class="cp-av">DR</div><div class="cp-nm"><strong>Derek</strong><br>Ruiqi Man</div></div>
+        <div class="cp"><div class="cp-n">19</div><div class="cp-av">MF</div><div class="cp-nm"><strong>Muhamad</strong><br>Faruq</div></div>
+        <div class="cp"><div class="cp-n">20</div><div class="cp-av">MM</div><div class="cp-nm"><strong>Matthew</strong><br>McKenzie</div></div>
+        <div class="cp"><div class="cp-n">21</div><div class="cp-av">IR</div><div class="cp-nm"><strong>Ilhan</strong><br>Rafael</div></div>
+        <div class="cp"><div class="cp-n">22</div><div class="cp-av">LC</div><div class="cp-nm"><strong>Leone</strong><br>Ciuti</div></div>
       </div>
     </div>
 
     <!-- U19 -->
-    <div class="youth-panel" id="yp-u19" style="display:none">
-      <div class="youth-count">21 players</div>
-      <div class="youth-grid">
-        <div class="youth-player"><div class="yp-avatar">MI</div><div class="yp-name">Mohammad Irhan Hussaini</div></div>
-        <div class="youth-player"><div class="yp-avatar">FT</div><div class="yp-name">Francesco Emilio Toso Villanueva</div></div>
-        <div class="youth-player"><div class="yp-avatar">MM</div><div class="yp-name">Matin Mirza</div></div>
-        <div class="youth-player"><div class="yp-avatar">MK</div><div class="yp-name">Muhammad Khasmir bin Effendi</div></div>
-        <div class="youth-player"><div class="yp-avatar">PG</div><div class="yp-name">Peter Erik van Groenestijn</div></div>
-        <div class="youth-player"><div class="yp-avatar">KE</div><div class="yp-name">Keoni</div></div>
-        <div class="youth-player"><div class="yp-avatar">AB</div><div class="yp-name">Muhd Ashraf Batista</div></div>
-        <div class="youth-player"><div class="yp-avatar">PE</div><div class="yp-name">Pradeep s/o Eraaman</div></div>
-        <div class="youth-player"><div class="yp-avatar">MF</div><div class="yp-name">Muhammad Firman bin Abdullah</div></div>
-        <div class="youth-player"><div class="yp-avatar">RS</div><div class="yp-name">Raoul Shah bin Fathir Ahmad</div></div>
-        <div class="youth-player"><div class="yp-avatar">PM</div><div class="yp-name">Poa Min Jun</div></div>
-        <div class="youth-player"><div class="yp-avatar">MR</div><div class="yp-name">Muhammad Rayyan bin Muhamad Roslan</div></div>
-        <div class="youth-player"><div class="yp-avatar">HA</div><div class="yp-name">Hazwan Afiq bin Haszalan</div></div>
-        <div class="youth-player"><div class="yp-avatar">IL</div><div class="yp-name">Isak Arthur Linden</div></div>
-        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Mohammed Danny bin Mohammed Ali</div></div>
-        <div class="youth-player"><div class="yp-avatar">LT</div><div class="yp-name">Luke Titterington</div></div>
-        <div class="youth-player"><div class="yp-avatar">MN</div><div class="yp-name">Muhmmad Nor Irfan bin Muhammad</div></div>
-        <div class="youth-player"><div class="yp-avatar">KA</div><div class="yp-name">Kavin Arvinth</div></div>
-        <div class="youth-player"><div class="yp-avatar">MD</div><div class="yp-name">Muhamad Dhafyr Iman bin Muhamad Sahfinye</div></div>
-        <div class="youth-player"><div class="yp-avatar">LY</div><div class="yp-name">Lucas Alessandro Yeo</div></div>
-        <div class="youth-player"><div class="yp-avatar">DC</div><div class="yp-name">Darren Choong Cheng Jun</div></div>
+    <div class="coe-panel" id="cp-u19" style="display:none">
+      <div class="coe-grid">
+        <div class="cp"><div class="cp-n">01</div><div class="cp-av">MI</div><div class="cp-nm"><strong>Mohammad</strong><br>Irhan Hussaini</div></div>
+        <div class="cp"><div class="cp-n">02</div><div class="cp-av">FT</div><div class="cp-nm"><strong>Francesco</strong><br>Emilio Toso</div></div>
+        <div class="cp"><div class="cp-n">03</div><div class="cp-av">MM</div><div class="cp-nm"><strong>Matin</strong><br>Mirza</div></div>
+        <div class="cp"><div class="cp-n">04</div><div class="cp-av">MK</div><div class="cp-nm"><strong>Muhammad</strong><br>Khasmir</div></div>
+        <div class="cp"><div class="cp-n">05</div><div class="cp-av">PG</div><div class="cp-nm"><strong>Peter Erik</strong><br>van Groenestijn</div></div>
+        <div class="cp"><div class="cp-n">06</div><div class="cp-av">KE</div><div class="cp-nm"><strong>Keoni</strong></div></div>
+        <div class="cp"><div class="cp-n">07</div><div class="cp-av">AB</div><div class="cp-nm"><strong>Ashraf</strong><br>Batista</div></div>
+        <div class="cp"><div class="cp-n">08</div><div class="cp-av">PE</div><div class="cp-nm"><strong>Pradeep</strong><br>Eraaman</div></div>
+        <div class="cp"><div class="cp-n">09</div><div class="cp-av">MF</div><div class="cp-nm"><strong>Muhammad</strong><br>Firman</div></div>
+        <div class="cp"><div class="cp-n">10</div><div class="cp-av">RS</div><div class="cp-nm"><strong>Raoul</strong><br>Shah</div></div>
+        <div class="cp"><div class="cp-n">11</div><div class="cp-av">PM</div><div class="cp-nm"><strong>Poa</strong><br>Min Jun</div></div>
+        <div class="cp"><div class="cp-n">12</div><div class="cp-av">MR</div><div class="cp-nm"><strong>Muhammad</strong><br>Rayyan</div></div>
+        <div class="cp"><div class="cp-n">13</div><div class="cp-av">HA</div><div class="cp-nm"><strong>Hazwan</strong><br>Afiq</div></div>
+        <div class="cp"><div class="cp-n">14</div><div class="cp-av">IA</div><div class="cp-nm"><strong>Isak</strong><br>Arthur Linden</div></div>
+        <div class="cp"><div class="cp-n">15</div><div class="cp-av">MD</div><div class="cp-nm"><strong>Mohammed</strong><br>Danny</div></div>
+        <div class="cp"><div class="cp-n">16</div><div class="cp-av">LT</div><div class="cp-nm"><strong>Luke</strong><br>Titterington</div></div>
+        <div class="cp"><div class="cp-n">17</div><div class="cp-av">MN</div><div class="cp-nm"><strong>Muhammad</strong><br>Nor Irfan</div></div>
+        <div class="cp"><div class="cp-n">18</div><div class="cp-av">KA</div><div class="cp-nm"><strong>Kavin</strong><br>Arvinth</div></div>
+        <div class="cp"><div class="cp-n">19</div><div class="cp-av">MD</div><div class="cp-nm"><strong>Muhamad</strong><br>Dhafyr Iman</div></div>
+        <div class="cp"><div class="cp-n">20</div><div class="cp-av">LA</div><div class="cp-nm"><strong>Lucas</strong><br>Alessandro Yeo</div></div>
+        <div class="cp"><div class="cp-n">21</div><div class="cp-av">DC</div><div class="cp-nm"><strong>Darren</strong><br>Choong Cheng</div></div>
       </div>
     </div>
   </div>
@@ -2200,6 +2230,20 @@
   function closeMob() { mobNav.classList.remove('open'); }
 
   // ── Youth age group tabs
+  function switchCoe(btn, id) {
+    document.querySelectorAll('.age-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.coe-panel').forEach(p => p.style.display = 'none');
+    btn.classList.add('active');
+    const panel = document.getElementById('cp-' + id);
+    panel.style.display = 'block';
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateY(14px)';
+    requestAnimationFrame(() => {
+      panel.style.transition = 'opacity .4s ease, transform .4s ease';
+      panel.style.opacity = '1';
+      panel.style.transform = 'translateY(0)';
+    });
+  }
   function switchAge(btn, id) {
     document.querySelectorAll('.yt').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.youth-panel').forEach(p => p.style.display = 'none');
