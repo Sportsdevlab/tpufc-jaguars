@@ -125,48 +125,48 @@ body:before{
 ══════════════════════════════ */
 .jag-front{
   background:
-    radial-gradient(ellipse at 80% 14%,rgba(90,180,40,.22) 0%,transparent 46%),
-    radial-gradient(ellipse at 12% 86%,rgba(50,120,20,.15) 0%,transparent 42%),
-    linear-gradient(140deg,#060c04 0%,#0d1a08 28%,#14220c 52%,#0a1608 76%,#050a03 100%);
-  border:1px solid rgba(100,200,50,.48);
+    radial-gradient(ellipse at 80% 14%,rgba(210,120,40,.24) 0%,transparent 46%),
+    radial-gradient(ellipse at 12% 86%,rgba(160,80,20,.18) 0%,transparent 42%),
+    linear-gradient(140deg,#100a04 0%,#1c1008 28%,#261508 52%,#1a0e06 76%,#0e0804 100%);
+  border:1px solid rgba(205,127,50,.58);
   box-shadow:
-    inset 0 1px 0 rgba(130,230,60,.22),
+    inset 0 1px 0 rgba(232,160,60,.24),
     0 2px 0 rgba(0,0,0,.6),
     0 40px 100px rgba(0,0,0,.9),
-    0 0 60px rgba(60,160,20,.08);
+    0 0 60px rgba(180,90,20,.08);
 }
-/* diagonal jungle lines */
+/* diagonal brushed bronze lines */
 .jag-front:before{
   content:"";position:absolute;inset:0;z-index:1;
   background:repeating-linear-gradient(
     108deg,
     transparent,transparent 18px,
-    rgba(100,200,50,.022) 18px,rgba(100,200,50,.022) 19px
+    rgba(205,127,50,.025) 18px,rgba(205,127,50,.025) 19px
   );
 }
-/* green sheen */
+/* bronze sheen */
 .jag-front:after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(112deg,transparent 30%,rgba(130,230,60,.1) 48%,transparent 65%);
-  animation:sheen 5s ease-in-out infinite;
+  background:linear-gradient(112deg,transparent 30%,rgba(232,160,60,.13) 48%,transparent 65%);
+  animation:sheen 4.5s ease-in-out infinite;
 }
 @keyframes sheen{0%,100%{transform:translateX(-120%)}50%{transform:translateX(120%)}}
 .jag-watermark{
   position:absolute;right:-14px;bottom:-22px;
   font-family:Anton;font-size:128px;line-height:1;
-  color:rgba(80,180,30,.065);text-transform:uppercase;user-select:none;z-index:1;
+  color:rgba(205,127,50,.07);text-transform:uppercase;user-select:none;z-index:1;
 }
 .jag-front .top-bar{
   position:absolute;top:0;left:0;right:0;height:3px;z-index:3;
-  background:linear-gradient(90deg,transparent,rgba(90,190,40,.7),rgba(130,230,60,.95),rgba(90,190,40,.7),transparent);
+  background:linear-gradient(90deg,transparent,rgba(190,110,35,.7),rgba(232,160,60,.95),rgba(190,110,35,.7),transparent);
 }
 .jag-chip .chip-cell{background:rgba(0,0,0,.28)}
-.jag-chip{background:linear-gradient(135deg,#2e7010,#72cc30,#3e9018,#5ab824);box-shadow:0 2px 10px rgba(80,180,30,.45)}
-.jag-color{color:#90e048}
+.jag-chip{background:linear-gradient(135deg,#8c4e18,#e08830,#a85e20,#cc7828);box-shadow:0 2px 10px rgba(180,90,20,.5)}
+.jag-color{color:#e0a050}
 .jag-back{
-  background:linear-gradient(150deg,#060c04,#0e1a08,#060c04);
-  border:1px solid rgba(100,200,50,.35);
-  box-shadow:0 40px 100px rgba(0,0,0,.92),0 0 50px rgba(60,160,20,.05);
+  background:linear-gradient(150deg,#100a04,#1c1008,#100a04);
+  border:1px solid rgba(205,127,50,.42);
+  box-shadow:0 40px 100px rgba(0,0,0,.92),0 0 50px rgba(180,90,20,.06);
 }
 
 /* jaguar crest bg */
@@ -181,22 +181,22 @@ body:before{
   -webkit-mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
   mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
 }
-/* jaguar rosette spots — green tint */
+/* jaguar rosette spots — bronze tint */
 .jag-spots{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background-image:
-    radial-gradient(ellipse 9px 7px at 8% 18%,rgba(80,180,30,.07) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 5% 15%,rgba(80,180,30,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 11% 21%,rgba(80,180,30,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 9px 7px at 90% 72%,rgba(80,180,30,.07) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 87% 69%,rgba(80,180,30,.11) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 93% 75%,rgba(80,180,30,.11) 45%,transparent 58%),
-    radial-gradient(ellipse 7px 6px at 82% 20%,rgba(80,180,30,.06) 55%,transparent 70%),
-    radial-gradient(ellipse 3.5px 3px at 79% 17%,rgba(80,180,30,.10) 45%,transparent 58%),
-    radial-gradient(ellipse 3.5px 3px at 85% 23%,rgba(80,180,30,.10) 45%,transparent 58%),
-    radial-gradient(ellipse 8px 6px at 18% 80%,rgba(80,180,30,.06) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 15% 77%,rgba(80,180,30,.10) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 21% 83%,rgba(80,180,30,.10) 45%,transparent 58%);
+    radial-gradient(ellipse 9px 7px at 8% 18%,rgba(200,110,30,.09) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 5% 15%,rgba(200,110,30,.14) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 11% 21%,rgba(200,110,30,.14) 45%,transparent 58%),
+    radial-gradient(ellipse 9px 7px at 90% 72%,rgba(200,110,30,.09) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 87% 69%,rgba(200,110,30,.13) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 93% 75%,rgba(200,110,30,.13) 45%,transparent 58%),
+    radial-gradient(ellipse 7px 6px at 82% 20%,rgba(200,110,30,.08) 55%,transparent 70%),
+    radial-gradient(ellipse 3.5px 3px at 79% 17%,rgba(200,110,30,.12) 45%,transparent 58%),
+    radial-gradient(ellipse 3.5px 3px at 85% 23%,rgba(200,110,30,.12) 45%,transparent 58%),
+    radial-gradient(ellipse 8px 6px at 18% 80%,rgba(200,110,30,.08) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 15% 77%,rgba(200,110,30,.12) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 21% 83%,rgba(200,110,30,.12) 45%,transparent 58%);
 }
 
 /* ══════════════════════════════
@@ -324,7 +324,7 @@ body:before{
               </div>
               <div class="card-season-wrap">
                 <div class="season-label">Season</div>
-                <div class="season-val" style="color:rgba(140,224,70,.65)">2026/27</div>
+                <div class="season-val" style="color:rgba(224,160,80,.65)">2026/27</div>
               </div>
             </div>
           </div>
