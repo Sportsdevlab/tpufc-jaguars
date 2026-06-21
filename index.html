@@ -147,6 +147,22 @@ h2{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.95;
 .asset p{color:#c8b99d;line-height:1.5}
 .bus-section{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .bus-img{border-radius:40px;overflow:hidden;border:1px solid rgba(201,162,74,.24);box-shadow:0 40px 120px rgba(0,0,0,.4)}
+.partner-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px}
+.benefit-card{border:1px solid rgba(201,162,74,.22);border-radius:30px;background:#11100d;padding:32px;position:relative;overflow:hidden}
+.benefit-card:before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(201,162,74,.14),transparent 60%)}
+.benefit-card>*{position:relative}
+.benefit-card b{font-family:Anton;font-size:52px;color:var(--gold2);display:block;line-height:1;margin-bottom:12px}
+.benefit-card h3{font-size:17px;text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px}
+.benefit-card p{color:#c9baa0;line-height:1.52;font-size:15px;margin:0}
+.partner-cta{text-align:center;padding-top:16px}
+.partner-cta p{font-size:17px;color:#d4c5a8;margin:0}
+.partner-cta a{color:var(--gold2);font-weight:700}
+.member-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:28px}
+.member-soon{text-align:center;padding:48px 20px 32px;border:1px solid rgba(0,0,0,.12);border-radius:24px;background:rgba(0,0,0,.06)}
+.member-soon .soon-title{font-family:Anton;font-size:64px;color:#111;letter-spacing:.04em;line-height:1}
+.member-soon p{margin:20px auto 0;max-width:480px;font-size:17px;color:#7b5a28;line-height:1.7}
+@media(max-width:1000px){.partner-benefits{grid-template-columns:1fr}}
+@media(max-width:620px){.member-grid{grid-template-columns:1fr}}
 .final{min-height:85vh;display:grid;place-items:center;text-align:center;background:
 radial-gradient(circle at center,rgba(201,162,74,.24),transparent 34%),#070707}
 .final h2{font-size:clamp(70px,12vw,180px);color:var(--gold2)}
@@ -167,7 +183,7 @@ radial-gradient(circle at center,rgba(201,162,74,.24),transparent 34%),#070707}
 <nav class="nav">
   <a class="logo-word" href="#top"><img src="crest.png" alt="Tanjong Pagar United FC crest">Tanjong Pagar United FC</a>
   <div class="navlinks">
-    <a href="#squad">Squad</a><a href="#coe">Academy COE</a>
+    <a href="#squad">Squad</a><a href="#coe">Academy COE</a><a href="#members">Members</a><a href="#partners">Partners</a>
   </div>
 </nav>
 
@@ -233,6 +249,79 @@ radial-gradient(circle at center,rgba(201,162,74,.24),transparent 34%),#070707}
   </div>
 </section>
 
+
+<section id="members" class="cream">
+  <div class="section-head">
+    <div><div class="label">Membership</div><h2>Become a Member.</h2></div>
+    <p class="lead">The Jaguar family is growing. Join officially and get closer to the new Tanjong Pagar than ever before.</p>
+  </div>
+  <div class="membership">
+    <div class="tier">
+      <div class="label" style="color:#8c6425;margin-bottom:10px">Entry</div>
+      <h3>Goal</h3>
+      <div class="price">S$38<span style="font-size:16px;font-family:Inter;font-weight:600;color:#a0906f">&thinsp;/ yr</span></div>
+      <ul>
+        <li>Official member card</li>
+        <li>20% off all merchandise</li>
+        <li>25% off match tickets</li>
+        <li>Priority buying access</li>
+      </ul>
+    </div>
+    <div class="tier featured">
+      <div class="label" style="margin-bottom:10px">Most Popular</div>
+      <h3>Platinum</h3>
+      <div class="price">S$78<span style="font-size:16px;font-family:Inter;font-weight:600;color:#a0906f">&thinsp;/ yr</span></div>
+      <ul>
+        <li>Everything in Goal</li>
+        <li>2 free match passes / season</li>
+        <li>50% off match tickets</li>
+        <li>Free welcome merch (scarf)</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="label" style="color:#8c6425;margin-bottom:10px">Premium</div>
+      <h3>Jaguar</h3>
+      <div class="price">S$148<span style="font-size:16px;font-family:Inter;font-weight:600;color:#a0906f">&thinsp;/ yr</span></div>
+      <ul>
+        <li>Everything in Platinum</li>
+        <li>4 free match passes / season</li>
+        <li>VIP lounge access at home matches</li>
+        <li>Annual player meet &amp; greet</li>
+      </ul>
+    </div>
+  </div>
+  <div class="member-soon">
+    <div class="soon-title">COMING SOON</div>
+    <p>Membership opens with the new season. Follow us on social media to be the first to know when registration launches.</p>
+  </div>
+</section>
+
+<section id="partners" class="dark">
+  <div class="section-head">
+    <div><div class="label">Partner With Us</div><h2>Part of the Story.</h2></div>
+    <p class="lead">Fifty years of Tanjong Pagar history. Now a new era begins — new coach, new signings, a club being rebuilt with ambition. Be here from day one, and let the story work for your brand.</p>
+  </div>
+  <div class="partner-benefits">
+    <div class="benefit-card">
+      <b>200K+</b>
+      <h3>Community Reach</h3>
+      <p>Jurong East is one of Singapore's fastest-growing corridors. Your brand sits at the heart of it.</p>
+    </div>
+    <div class="benefit-card">
+      <b>All Singapore</b>
+      <h3>Every Community</h3>
+      <p>Football reaches Chinese, Malay, Indian and expat audiences at once. No other platform does that.</p>
+    </div>
+    <div class="benefit-card">
+      <b>Day One</b>
+      <h3>First Mover</h3>
+      <p>The rebuild is just starting. Partners who come in now grow with the club through its most exciting chapter yet.</p>
+    </div>
+  </div>
+  <div class="partner-cta">
+    <p>Start a conversation — <a href="mailto:hello@tpufc.sg">hello@tpufc.sg</a></p>
+  </div>
+</section>
 
 <section class="final">
   <div>
