@@ -101,30 +101,106 @@ body:before{
 /* ── Back shared ── */
 .back-inner{height:100%;display:flex;flex-direction:column}
 .mag{height:46px;background:linear-gradient(180deg,#161616,#0c0c0c);margin-top:38px}
-.sig{
-  margin:14px 22px;height:40px;border-radius:4px;
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);
-  display:flex;align-items:center;padding:0 10px;
+.back-logo-zone{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;padding:10px 0 4px;
 }
-.sig-lines{flex:1;height:18px;border-radius:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.07),rgba(255,255,255,.07) 1px,transparent 1px,transparent 7px)}
-.back-body{flex:1;display:flex;justify-content:space-between;align-items:flex-end;padding:8px 22px 20px}
-.perks-block{font-size:10px;text-transform:uppercase;letter-spacing:.1em;line-height:1.75;color:rgba(234,220,196,.38)}
-.perks-title{display:block;font-size:11px;font-weight:800;letter-spacing:.15em;margin-bottom:6px}
+.back-logo-zone img{width:78px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.7))}
+.back-club-name{font-family:Anton;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(234,220,196,.45)}
+.back-url{font-family:Anton;font-size:9px;text-transform:uppercase;letter-spacing:.22em;color:rgba(234,220,196,.28)}
+.back-body{display:flex;justify-content:space-between;align-items:flex-end;padding:0 22px 18px}
+.perks-block{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;line-height:1.75;color:rgba(234,220,196,.36)}
+.perks-title{display:block;font-size:10px;font-weight:800;letter-spacing:.15em;margin-bottom:5px}
 .qr{
-  width:58px;height:58px;border-radius:7px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  width:52px;height:52px;border-radius:6px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);
   display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);
-  gap:2px;padding:6px;
+  gap:2px;padding:5px;
 }
-.q{border-radius:1px;background:rgba(234,220,196,.45)}
-.qd{border-radius:1px;background:rgba(234,220,196,.08)}
-.back-url{
-  text-align:center;font-family:Anton;font-size:10px;text-transform:uppercase;
-  letter-spacing:.22em;padding-bottom:16px;align-self:flex-end;width:100%;
+.q{border-radius:1px;background:rgba(234,220,196,.42)}
+.qd{border-radius:1px;background:rgba(234,220,196,.07)}
+
+/* ══════════════════════════════
+   JAGUAR CARD (entry — dark green)
+══════════════════════════════ */
+.jag-front{
+  background:
+    radial-gradient(ellipse at 80% 14%,rgba(90,180,40,.22) 0%,transparent 46%),
+    radial-gradient(ellipse at 12% 86%,rgba(50,120,20,.15) 0%,transparent 42%),
+    linear-gradient(140deg,#060c04 0%,#0d1a08 28%,#14220c 52%,#0a1608 76%,#050a03 100%);
+  border:1px solid rgba(100,200,50,.48);
+  box-shadow:
+    inset 0 1px 0 rgba(130,230,60,.22),
+    0 2px 0 rgba(0,0,0,.6),
+    0 40px 100px rgba(0,0,0,.9),
+    0 0 60px rgba(60,160,20,.08);
+}
+/* diagonal jungle lines */
+.jag-front:before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:repeating-linear-gradient(
+    108deg,
+    transparent,transparent 18px,
+    rgba(100,200,50,.022) 18px,rgba(100,200,50,.022) 19px
+  );
+}
+/* green sheen */
+.jag-front:after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(112deg,transparent 30%,rgba(130,230,60,.1) 48%,transparent 65%);
+  animation:sheen 5s ease-in-out infinite;
+}
+@keyframes sheen{0%,100%{transform:translateX(-120%)}50%{transform:translateX(120%)}}
+.jag-watermark{
+  position:absolute;right:-14px;bottom:-22px;
+  font-family:Anton;font-size:128px;line-height:1;
+  color:rgba(80,180,30,.065);text-transform:uppercase;user-select:none;z-index:1;
+}
+.jag-front .top-bar{
+  position:absolute;top:0;left:0;right:0;height:3px;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(90,190,40,.7),rgba(130,230,60,.95),rgba(90,190,40,.7),transparent);
+}
+.jag-chip .chip-cell{background:rgba(0,0,0,.28)}
+.jag-chip{background:linear-gradient(135deg,#2e7010,#72cc30,#3e9018,#5ab824);box-shadow:0 2px 10px rgba(80,180,30,.45)}
+.jag-color{color:#90e048}
+.jag-back{
+  background:linear-gradient(150deg,#060c04,#0e1a08,#060c04);
+  border:1px solid rgba(100,200,50,.35);
+  box-shadow:0 40px 100px rgba(0,0,0,.92),0 0 50px rgba(60,160,20,.05);
+}
+
+/* jaguar crest bg */
+.jag-bg{
+  position:absolute;inset:0;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;pointer-events:none;
+}
+.jag-bg img{
+  width:340px;margin-top:-18px;opacity:.065;
+  mix-blend-mode:luminosity;filter:blur(.3px) contrast(1.15);user-select:none;
+  -webkit-mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
+  mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
+}
+/* jaguar rosette spots — green tint */
+.jag-spots{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    radial-gradient(ellipse 9px 7px at 8% 18%,rgba(80,180,30,.07) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 5% 15%,rgba(80,180,30,.12) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 11% 21%,rgba(80,180,30,.12) 45%,transparent 58%),
+    radial-gradient(ellipse 9px 7px at 90% 72%,rgba(80,180,30,.07) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 87% 69%,rgba(80,180,30,.11) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 93% 75%,rgba(80,180,30,.11) 45%,transparent 58%),
+    radial-gradient(ellipse 7px 6px at 82% 20%,rgba(80,180,30,.06) 55%,transparent 70%),
+    radial-gradient(ellipse 3.5px 3px at 79% 17%,rgba(80,180,30,.10) 45%,transparent 58%),
+    radial-gradient(ellipse 3.5px 3px at 85% 23%,rgba(80,180,30,.10) 45%,transparent 58%),
+    radial-gradient(ellipse 8px 6px at 18% 80%,rgba(80,180,30,.06) 55%,transparent 70%),
+    radial-gradient(ellipse 4px 3px at 15% 77%,rgba(80,180,30,.10) 45%,transparent 58%),
+    radial-gradient(ellipse 4px 3px at 21% 83%,rgba(80,180,30,.10) 45%,transparent 58%);
 }
 
 /* ══════════════════════════════
-   GOLD CARD
+   GOLD CARD (middle)
 ══════════════════════════════ */
 .gold-front{
   background:
@@ -138,22 +214,15 @@ body:before{
     0 40px 100px rgba(0,0,0,.88),
     0 0 55px rgba(201,162,74,.07);
 }
-/* diagonal brush lines */
 .gold-front:before{
   content:"";position:absolute;inset:0;z-index:1;
-  background:repeating-linear-gradient(
-    108deg,
-    transparent,transparent 18px,
-    rgba(241,207,114,.028) 18px,rgba(241,207,114,.028) 19px
-  );
+  background:repeating-linear-gradient(108deg,transparent,transparent 18px,rgba(241,207,114,.028) 18px,rgba(241,207,114,.028) 19px);
 }
-/* sheen sweep */
 .gold-front:after{
   content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(110deg,transparent 30%,rgba(241,207,114,.13) 47%,transparent 64%);
   animation:sheen 4s ease-in-out infinite;
 }
-@keyframes sheen{0%,100%{transform:translateX(-120%)}50%{transform:translateX(120%)}}
 .gold-watermark{
   position:absolute;right:-14px;bottom:-22px;
   font-family:Anton;font-size:128px;line-height:1;
@@ -168,130 +237,51 @@ body:before{
   box-shadow:0 40px 100px rgba(0,0,0,.9),0 0 50px rgba(201,162,74,.05);
 }
 
-/* jaguar crest bg */
-.jag-bg{
-  position:absolute;inset:0;z-index:1;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;pointer-events:none;
-}
-.jag-bg img{
-  width:340px;
-  margin-top:-18px;
-  opacity:.062;
-  mix-blend-mode:luminosity;
-  filter:blur(.3px) contrast(1.15);
-  user-select:none;
-  -webkit-mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
-  mask-image:radial-gradient(ellipse 58% 65% at 50% 44%,black 30%,transparent 78%);
-}
-
 /* ══════════════════════════════
-   PLATINUM CARD
+   PLATINUM CARD (top — silver)
 ══════════════════════════════ */
 .plat-front{
   background:
-    radial-gradient(ellipse at 78% 16%,rgba(200,210,240,.16) 0%,transparent 48%),
-    radial-gradient(ellipse at 14% 84%,rgba(140,155,200,.1) 0%,transparent 42%),
-    linear-gradient(140deg,#0c0c13 0%,#13131f 28%,#191928 52%,#111120 76%,#08080f 100%);
-  border:1px solid rgba(185,192,224,.42);
+    radial-gradient(ellipse at 78% 16%,rgba(220,228,248,.18) 0%,transparent 48%),
+    radial-gradient(ellipse at 14% 84%,rgba(180,188,210,.12) 0%,transparent 42%),
+    linear-gradient(140deg,#0e0e10 0%,#161618 28%,#1c1c20 52%,#141416 76%,#0a0a0c 100%);
+  border:1.5px solid rgba(210,218,240,.65);
   box-shadow:
-    inset 0 1px 0 rgba(220,228,255,.22),
-    0 2px 0 rgba(0,0,0,.6),
-    0 40px 100px rgba(0,0,0,.9),
-    0 0 55px rgba(140,155,200,.05);
+    inset 0 1px 0 rgba(240,244,255,.32),
+    inset 0 -1px 0 rgba(200,210,235,.18),
+    0 2px 0 rgba(0,0,0,.7),
+    0 40px 100px rgba(0,0,0,.96),
+    0 0 80px rgba(200,210,240,.07);
 }
-/* horizontal scan lines */
+/* fine horizontal platinum grain */
 .plat-front:before{
   content:"";position:absolute;inset:0;z-index:1;
-  background:repeating-linear-gradient(180deg,transparent,transparent 3px,rgba(180,190,230,.025) 3px,rgba(180,190,230,.025) 4px);
+  background:repeating-linear-gradient(180deg,transparent,transparent 2px,rgba(210,220,245,.018) 2px,rgba(210,220,245,.018) 3px);
 }
-/* silver sheen */
+/* platinum sheen — bright, fast */
 .plat-front:after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(112deg,transparent 32%,rgba(210,218,250,.11) 48%,transparent 65%);
-  animation:sheen 5s ease-in-out infinite;
+  background:linear-gradient(112deg,transparent 28%,rgba(240,244,255,.22) 45%,rgba(255,255,255,.08) 50%,transparent 62%);
+  animation:plsheen 3s ease-in-out infinite;
 }
+@keyframes plsheen{0%,100%{transform:translateX(-130%);opacity:.5}50%{transform:translateX(130%);opacity:1}}
 .plat-watermark{
   position:absolute;right:-14px;bottom:-22px;
   font-family:Anton;font-size:128px;line-height:1;
-  color:rgba(175,185,220,.055);text-transform:uppercase;user-select:none;z-index:1;
+  color:rgba(200,210,235,.055);text-transform:uppercase;user-select:none;z-index:1;
 }
-/* top accent bar */
+/* thick platinum top bar */
 .plat-front .top-bar{
-  position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,transparent,rgba(190,200,235,.6),rgba(210,220,255,.9),rgba(190,200,235,.6),transparent);
+  position:absolute;top:0;left:0;right:0;height:4px;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(190,200,230,.7),rgba(240,244,255,1),rgba(190,200,230,.7),transparent);
 }
 .plat-chip .chip-cell{background:rgba(0,0,0,.22)}
-.plat-chip{background:linear-gradient(135deg,#8a95b8,#d4daf0,#9da8c8,#c8d0e8);box-shadow:0 2px 10px rgba(180,190,230,.3)}
-.plat-color{color:#c4cce8}
+.plat-chip{background:linear-gradient(135deg,#8e96b8,#d8dff0,#a8b0d0,#d0d8f0);box-shadow:0 2px 12px rgba(180,190,230,.5)}
+.plat-color{color:#d8dff2}
 .plat-back{
-  background:linear-gradient(150deg,#0c0c13,#13131f,#0c0c13);
-  border:1px solid rgba(185,192,224,.32);
-  box-shadow:0 40px 100px rgba(0,0,0,.92);
-}
-
-/* ══════════════════════════════
-   JAGUAR CARD
-══════════════════════════════ */
-.jag-front{
-  background:
-    radial-gradient(ellipse at 76% 18%,rgba(201,162,74,.24) 0%,transparent 44%),
-    radial-gradient(ellipse at 18% 80%,rgba(120,85,20,.2) 0%,transparent 38%),
-    linear-gradient(140deg,#040404 0%,#0b0a05 30%,#100e06 55%,#080705 80%,#030303 100%);
-  border:1.5px solid rgba(201,162,74,.82);
-  box-shadow:
-    inset 0 1px 0 rgba(241,207,114,.38),
-    inset 0 -1px 0 rgba(201,162,74,.22),
-    0 2px 0 rgba(0,0,0,.7),
-    0 40px 100px rgba(0,0,0,.96),
-    0 0 80px rgba(201,162,74,.1);
-}
-/* jaguar rosette spots */
-.jag-spots{
-  position:absolute;inset:0;z-index:1;
-  background-image:
-    radial-gradient(ellipse 9px 7px at 8% 18%,rgba(201,162,74,.07) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 5% 15%,rgba(201,162,74,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 11% 21%,rgba(201,162,74,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 9px 7px at 90% 72%,rgba(201,162,74,.07) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 87% 69%,rgba(201,162,74,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 93% 75%,rgba(201,162,74,.12) 45%,transparent 58%),
-    radial-gradient(ellipse 7px 6px at 82% 20%,rgba(201,162,74,.06) 55%,transparent 70%),
-    radial-gradient(ellipse 3.5px 3px at 79% 17%,rgba(201,162,74,.1) 45%,transparent 58%),
-    radial-gradient(ellipse 3.5px 3px at 85% 23%,rgba(201,162,74,.1) 45%,transparent 58%),
-    radial-gradient(ellipse 8px 6px at 18% 80%,rgba(201,162,74,.06) 55%,transparent 70%),
-    radial-gradient(ellipse 4px 3px at 15% 77%,rgba(201,162,74,.1) 45%,transparent 58%),
-    radial-gradient(ellipse 4px 3px at 21% 83%,rgba(201,162,74,.1) 45%,transparent 58%),
-    radial-gradient(ellipse 7px 5px at 50% 92%,rgba(201,162,74,.05) 55%,transparent 70%),
-    radial-gradient(ellipse 3px 2.5px at 47% 90%,rgba(201,162,74,.09) 45%,transparent 58%),
-    radial-gradient(ellipse 3px 2.5px at 53% 94%,rgba(201,162,74,.09) 45%,transparent 58%);
-  pointer-events:none;
-}
-/* gold sheen — more intense */
-.jag-front:after{
-  content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(112deg,transparent 28%,rgba(241,207,114,.18) 45%,transparent 62%);
-  animation:jsheen 3.2s ease-in-out infinite;
-}
-@keyframes jsheen{0%,100%{transform:translateX(-130%);opacity:.6}50%{transform:translateX(130%);opacity:1}}
-/* top gold bar */
-.jag-front .top-bar{
-  position:absolute;top:0;left:0;right:0;height:4px;
-  background:linear-gradient(90deg,transparent,rgba(201,162,74,.7),rgba(241,207,114,1),rgba(201,162,74,.7),transparent);
-  z-index:3;
-}
-.jag-watermark{
-  position:absolute;right:-10px;bottom:-22px;
-  font-family:Anton;font-size:128px;line-height:1;
-  color:rgba(201,162,74,.08);text-transform:uppercase;user-select:none;z-index:1;
-}
-.jag-chip .chip-cell{background:rgba(0,0,0,.22)}
-.jag-chip{background:linear-gradient(135deg,#c9a24a,#f1cf72,#e8b540,#c9a24a);box-shadow:0 2px 14px rgba(201,162,74,.65)}
-.jag-color{color:var(--gold2)}
-.jag-back{
-  background:linear-gradient(150deg,#040404,#0b0a05,#040404);
-  border:1.5px solid rgba(201,162,74,.68);
-  box-shadow:0 40px 100px rgba(0,0,0,.96),0 0 70px rgba(201,162,74,.08);
+  background:linear-gradient(150deg,#0e0e10,#161618,#0e0e10);
+  border:1.5px solid rgba(210,218,240,.5);
+  box-shadow:0 40px 100px rgba(0,0,0,.96),0 0 70px rgba(200,210,240,.06);
 }
 </style>
 </head>
@@ -301,14 +291,16 @@ body:before{
 
 <div class="cards-row">
 
-  <!-- ══ BASIC ══ -->
+  <!-- ══ JAGUAR (entry) ══ -->
   <div class="card-slot">
     <div class="scene">
       <div class="flipper">
 
-        <div class="face plat-front">
+        <div class="face jag-front">
           <div class="top-bar"></div>
-          <div class="plat-watermark">BASIC</div>
+          <div class="jag-bg"><img src="crest.png" alt=""></div>
+          <div class="jag-spots"></div>
+          <div class="jag-watermark">JAGUAR</div>
           <div class="card-inner">
             <div class="card-top">
               <div class="crest-wrap">
@@ -318,33 +310,37 @@ body:before{
               <div class="holo"></div>
             </div>
             <div class="card-mid">
-              <div class="chip plat-chip">
+              <div class="chip jag-chip">
                 <div class="chip-cell"></div><div class="chip-cell"></div>
                 <div class="chip-cell"></div><div class="chip-cell"></div>
               </div>
               <div class="card-num">TPUFC · 2026 · •••• · ••••</div>
-              <div class="card-name plat-color">Member Name</div>
+              <div class="card-name jag-color">Member Name</div>
             </div>
             <div class="card-bottom">
-              <div class="tier-name-badge plat-color">
-                Basic
+              <div class="tier-name-badge jag-color">
+                Jaguar
                 <span class="tier-sub">Member</span>
               </div>
               <div class="card-season-wrap">
                 <div class="season-label">Season</div>
-                <div class="season-val" style="color:rgba(196,204,232,.65)">2026/27</div>
+                <div class="season-val" style="color:rgba(140,224,70,.65)">2026/27</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="face back plat-back">
+        <div class="face back jag-back">
           <div class="back-inner">
             <div class="mag"></div>
-            <div class="sig"><div class="sig-lines"></div></div>
+            <div class="back-logo-zone">
+              <img src="crest.png" alt="TPUFC">
+              <div class="back-club-name">Tanjong Pagar United FC</div>
+              <div class="back-url">tpufc.sg</div>
+            </div>
             <div class="back-body">
               <div class="perks-block">
-                <span class="perks-title" style="color:rgba(196,204,232,.75)">Basic Benefits</span>
+                <span class="perks-title" style="color:rgba(130,224,60,.75)">Jaguar Benefits</span>
                 Official member card<br>
                 20% merch discount<br>
                 25% off match tickets<br>
@@ -358,19 +354,18 @@ body:before{
                 <div class="qd"></div><div class="q"></div><div class="qd"></div><div class="q"></div><div class="q"></div>
               </div>
             </div>
-            <div class="back-url" style="color:rgba(180,190,220,.38)">tpufc.sg</div>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="tier-label plat-color">
-      Basic Member
+    <div class="tier-label jag-color">
+      Jaguar Member
       <span class="tier-price">S$38 / year</span>
     </div>
   </div>
 
-  <!-- ══ GOLD ══ -->
+  <!-- ══ GOLD (middle) ══ -->
   <div class="card-slot">
     <div class="scene">
       <div class="flipper">
@@ -409,11 +404,15 @@ body:before{
         <div class="face back gold-back">
           <div class="back-inner">
             <div class="mag"></div>
-            <div class="sig"><div class="sig-lines"></div></div>
+            <div class="back-logo-zone">
+              <img src="crest.png" alt="TPUFC">
+              <div class="back-club-name">Tanjong Pagar United FC</div>
+              <div class="back-url">tpufc.sg</div>
+            </div>
             <div class="back-body">
               <div class="perks-block">
                 <span class="perks-title" style="color:rgba(241,207,114,.75)">Gold Benefits</span>
-                Everything in Basic<br>
+                Everything in Jaguar<br>
                 2 free match passes<br>
                 50% off match tickets<br>
                 Welcome merch (scarf)
@@ -426,7 +425,6 @@ body:before{
                 <div class="q"></div><div class="qd"></div><div class="q"></div><div class="qd"></div><div class="q"></div>
               </div>
             </div>
-            <div class="back-url" style="color:rgba(201,162,74,.4)">tpufc.sg</div>
           </div>
         </div>
 
@@ -438,16 +436,14 @@ body:before{
     </div>
   </div>
 
-  <!-- ══ MAXIMUM ══ -->
+  <!-- ══ PLATINUM (top) ══ -->
   <div class="card-slot">
     <div class="scene">
       <div class="flipper">
 
-        <div class="face jag-front">
+        <div class="face plat-front">
           <div class="top-bar"></div>
-          <div class="jag-bg"><img src="crest.png" alt=""></div>
-          <div class="jag-spots"></div>
-          <div class="jag-watermark">GO</div>
+          <div class="plat-watermark">PLAT</div>
           <div class="card-inner">
             <div class="card-top">
               <div class="crest-wrap">
@@ -457,33 +453,37 @@ body:before{
               <div class="holo"></div>
             </div>
             <div class="card-mid">
-              <div class="chip jag-chip">
+              <div class="chip plat-chip">
                 <div class="chip-cell"></div><div class="chip-cell"></div>
                 <div class="chip-cell"></div><div class="chip-cell"></div>
               </div>
               <div class="card-num">TPUFC · 2026 · •••• · ••••</div>
-              <div class="card-name jag-color">Member Name</div>
+              <div class="card-name plat-color">Member Name</div>
             </div>
             <div class="card-bottom">
-              <div class="tier-name-badge jag-color">
-                Go Jaguars
+              <div class="tier-name-badge plat-color">
+                Platinum
                 <span class="tier-sub">Member</span>
               </div>
               <div class="card-season-wrap">
                 <div class="season-label">Season</div>
-                <div class="season-val">2026/27</div>
+                <div class="season-val" style="color:rgba(210,218,245,.65)">2026/27</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="face back jag-back">
+        <div class="face back plat-back">
           <div class="back-inner">
             <div class="mag"></div>
-            <div class="sig"><div class="sig-lines"></div></div>
+            <div class="back-logo-zone">
+              <img src="crest.png" alt="TPUFC">
+              <div class="back-club-name">Tanjong Pagar United FC</div>
+              <div class="back-url">tpufc.sg</div>
+            </div>
             <div class="back-body">
               <div class="perks-block">
-                <span class="perks-title" style="color:rgba(241,207,114,.8)">Go Jaguars Benefits</span>
+                <span class="perks-title" style="color:rgba(210,218,245,.8)">Platinum Benefits</span>
                 Everything in Gold<br>
                 Free passes all season<br>
                 2 VIP lounge / year<br>
@@ -497,14 +497,13 @@ body:before{
                 <div class="q"></div><div class="q"></div><div class="qd"></div><div class="q"></div><div class="q"></div>
               </div>
             </div>
-            <div class="back-url" style="color:rgba(201,162,74,.45)">tpufc.sg</div>
           </div>
         </div>
 
       </div>
     </div>
-    <div class="tier-label jag-color">
-      Go Jaguars Member
+    <div class="tier-label plat-color">
+      Platinum Member
       <span class="tier-price">S$148 / year</span>
     </div>
   </div>
